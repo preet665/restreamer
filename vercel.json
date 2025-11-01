@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/*.py": {
+      "runtime": "@vercel/python@3.1.7",
+      "maxDuration": 60
+    }
+  },
+  "outputDirectory": ".",
+  "routes": [
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "api/index.py" }
+  ],
+  "installCommand": "python3 -m pip install -r requirements.txt"
+}
